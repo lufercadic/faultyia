@@ -164,18 +164,6 @@ def main():
     )
 
 
-    st.markdown(
-        """
-        <style>
-            /* Fondo principal */
-            .stApp {
-                background-color: #444;
-            }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-
 
     st.title("Detección de anomalías en equipos")
     st.write(
@@ -309,4 +297,5 @@ def main():
 
 
 if __name__ == "__main__":
+
     main()
