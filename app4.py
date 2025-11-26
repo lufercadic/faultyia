@@ -199,7 +199,7 @@ def main():
     st.markdown("---")
 
     # 3. Formulario de entrada de usuario
-    st.subheader("Ingresar condiciones de operación")
+    st.subheader("Ingresar condiciones de operación del equipo")
 
     df_original = artifacts["df_original"]
 
