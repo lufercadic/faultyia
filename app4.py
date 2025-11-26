@@ -212,15 +212,6 @@ def main():
     locations = sorted(df_original["location"].unique())
     equipments = sorted(df_original["equipment"].unique())
 
-
-
-
-    if st.button("Haz clic aquí"):
-        saludar()
-
-
-
-
     with st.form("prediction_form"):
         c1, c2 = st.columns(2)
         with c1:
@@ -299,3 +290,4 @@ def main():
 if __name__ == "__main__":
 
     main()
+
