@@ -181,20 +181,12 @@ def main():
         )
         return
 
-    # st.subheader("Vista rápida del dataset")
-    # st.dataframe(df.head())
 
     # 2. Entrenar modelo y mostrar métricas
     # st.subheader("Entrenamiento del modelo")
     with st.spinner("Entrenando modelo (una sola vez, se cachea)..."):
         artifacts = train_model(df)
 
-    # metrics = artifacts["metrics"]
-    # col1, col2, col3, col4 = st.columns(4)
-    # col1.metric("Accuracy", f"{metrics['accuracy']:.3f}")
-    # col2.metric("Precision", f"{metrics['precision']:.3f}")
-    # col3.metric("Recall", f"{metrics['recall']:.3f}")
-    # col4.metric("F1-score", f"{metrics['f1']:.3f}")
 
     st.markdown("---")
 
@@ -290,4 +282,5 @@ def main():
 if __name__ == "__main__":
 
     main()
+
 
