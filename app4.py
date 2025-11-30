@@ -6,10 +6,12 @@ import pandas as pd
 import numpy as np
 
 from imblearn.over_sampling import SMOTE
+from imblearn.combine import SMOTETomek
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+
 
 # ---------------------------
 # Carga de datos
@@ -62,12 +64,12 @@ def train_model(df: pd.DataFrame):
     X_scaled_df = pd.concat([X_scaled_df_part, X_not_scaled], axis=1)
 
     # Balanceo con SMOTE
-    smote = SMOTE(sampling_strategy="auto", random_state=42)
-    X_smote, y_smote = smote.fit_resample(X_scaled_df, y)
+    smote_tomek = SMOTETomek(sampling_strategy="auto", random_state=42)
+    X_smote_tomek, y_smote_tomek = smote_tomek.fit_resample(X_scaled_df, y)
 
     # Split train / test
     X_train, X_test, y_train, y_test = train_test_split(
-        X_smote, y_smote, train_size=0.8, random_state=42, stratify=y_smote
+        X_smote_tomek, y_smote_tomek, train_size=0.8, random_state=42, stratify=y_smote_tomek
     )
 
     # Modelo
@@ -282,5 +284,6 @@ def main():
 if __name__ == "__main__":
 
     main()
+
 
 
